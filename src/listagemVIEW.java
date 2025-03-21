@@ -1,6 +1,5 @@
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
-
 /**
  *
  * @author IVAN LUCAS FERREIRA BORGES
@@ -149,12 +148,18 @@ public class listagemVIEW extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVenderActionPerformed
-        String id = id_produto_venda.getText();
-        
-        ProdutosDAO produtosdao = new ProdutosDAO();
-        
-        //produtosdao.venderProduto(Integer.parseInt(id));
        
+        String id = id_produto_venda.getText();
+        ProdutosDAO produtosdao = new ProdutosDAO();
+        produtosdao.venderProdutos(Integer.parseInt(id));
+        
+        id_produto_venda.setText("");
+        id_produto_venda.requestFocus();
+        
+        dispose();
+        listarProdutos();
+        listagemVIEW lista = new listagemVIEW();
+        lista.setVisible(true);
     }//GEN-LAST:event_btnVenderActionPerformed
 
     private void btnVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVendasActionPerformed
