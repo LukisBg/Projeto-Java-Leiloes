@@ -4,10 +4,11 @@ import java.sql.SQLException;
 
 /**
  *
- * @author Adm
+ * @author IVAN LUCAS FERREIRA BORGES
  */
 public class conectaDAO {
     
+    /**Método para se conectar ao banco de dados*/
     public Connection conectaDAO() {
 
         try {

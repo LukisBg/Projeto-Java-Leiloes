@@ -3,7 +3,7 @@ import javax.swing.table.TableRowSorter;
 
 /**
  *
- * @author Adm
+ * @author IVAN LUCAS FERREIRA BORGES
  */
 
 public class listagemVIEW extends javax.swing.JFrame {
@@ -61,10 +61,7 @@ public class listagemVIEW extends javax.swing.JFrame {
 
         listaProdutos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "ID", "Nome", "Valor", "Status"

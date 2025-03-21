@@ -1,6 +1,6 @@
 /**
  *
- * @author Adm
+ * @author IVAN LUCAS FERREIRA BORGES
  */
 
 import java.sql.PreparedStatement;
@@ -20,7 +20,8 @@ private final conectaDAO conexao;
      this.conexao = new conectaDAO();
      this.conn = (Connection) this.conexao.conectaDAO();
 }
-    
+ 
+    /**Método parar cadastrar produtos no banco de dados*/
     public void cadastrarProduto(ProdutosDTO produtos) throws SQLException {
     String sql = "INSERT INTO produtos(nome, valor, status) VALUES (?, ?, ?)";
     
@@ -31,7 +32,8 @@ private final conectaDAO conexao;
         
         stmt.execute();
 }
-
+    
+     /**Método parar listar produtos, consultando no banco de dados*/
     public List<ProdutosDTO> getProdutos(){
      String sql = "SELECT * FROM produtos";
     try {
