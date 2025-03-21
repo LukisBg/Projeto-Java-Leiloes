@@ -6,7 +6,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author Adm
+ * @author IVAN LUCAS FERREIRA BORGES
  */
 public class cadastroVIEW extends javax.swing.JFrame {
 
@@ -154,9 +154,11 @@ public class cadastroVIEW extends javax.swing.JFrame {
         ProdutosDAO produtodao = new ProdutosDAO();
         try {
         produtodao.cadastrarProduto(produto);
+        // Caixa de diálogo confirmando cadastro
         JOptionPane.showMessageDialog(this, "Cadastro realizado com sucesso!");
         } catch (SQLException ex) {
              Logger.getLogger(cadastroVIEW.class.getName()).log(Level.SEVERE, null, ex);
+             // Caixa de diálogo confirmando erro de cadastro
              JOptionPane.showMessageDialog(this, "Cadastro não realizado!");
         }
     }//GEN-LAST:event_btnCadastrarActionPerformed

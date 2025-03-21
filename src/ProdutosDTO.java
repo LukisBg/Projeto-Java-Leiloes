@@ -1,6 +1,6 @@
 /**
  *
- * @author Adm
+ * @author IVAN LUCAS FERRREIRA BORGES
  */
 public class ProdutosDTO {
     private Integer id;
@@ -8,6 +8,7 @@ public class ProdutosDTO {
     private String valor;
     private String status;
 
+    /**Getters e setters*/
     public Integer getId() {
         return id;
     }
