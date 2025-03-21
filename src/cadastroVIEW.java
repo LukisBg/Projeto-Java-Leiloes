@@ -1,3 +1,9 @@
+
+import javax.swing.JOptionPane;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Adm
@@ -135,17 +141,24 @@ public class cadastroVIEW extends javax.swing.JFrame {
     }//GEN-LAST:event_cadastroNomeActionPerformed
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
+       
         ProdutosDTO produto = new ProdutosDTO();
+        
         String nome = cadastroNome.getText();
         String valor = cadastroValor.getText();
         String status = "A Venda";
         produto.setNome(nome);
-        produto.setValor(Integer.parseInt(valor));
+        produto.setValor(valor);
         produto.setStatus(status);
         
         ProdutosDAO produtodao = new ProdutosDAO();
+        try {
         produtodao.cadastrarProduto(produto);
-        
+        JOptionPane.showMessageDialog(this, "Cadastro realizado com sucesso!");
+        } catch (SQLException ex) {
+             Logger.getLogger(cadastroVIEW.class.getName()).log(Level.SEVERE, null, ex);
+             JOptionPane.showMessageDialog(this, "Cadastro não realizado!");
+        }
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
     private void btnProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProdutosActionPerformed
