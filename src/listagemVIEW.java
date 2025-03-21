@@ -50,7 +50,7 @@ public class listagemVIEW extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        id_produto_venda = new javax.swing.JTextPane();
+        idProduto = new javax.swing.JTextPane();
         btnVender = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         btnVendas = new javax.swing.JButton();
@@ -74,7 +74,7 @@ public class listagemVIEW extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Lucida Fax", 0, 14)); // NOI18N
         jLabel2.setText("Vender Produto (ID)");
 
-        jScrollPane2.setViewportView(id_produto_venda);
+        jScrollPane2.setViewportView(idProduto);
 
         btnVender.setText("Vender");
         btnVender.addActionListener(new java.awt.event.ActionListener() {
@@ -153,13 +153,14 @@ public class listagemVIEW extends javax.swing.JFrame {
 
     private void btnVenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVenderActionPerformed
 
-        String id = id_produto_venda.getText();
+        String id = idProduto.getText();
         ProdutosDAO produtosdao = new ProdutosDAO();
         produtosdao.venderProdutos(Integer.parseInt(id));
 
-        id_produto_venda.setText("");
-        id_produto_venda.requestFocus();
-
+        idProduto.setText("");
+        idProduto.requestFocus();
+        
+        // fechando tela atual para atualizar a tela de listagem
         dispose();
         listarProdutos();
         listagemVIEW lista = new listagemVIEW();
@@ -210,7 +211,7 @@ public class listagemVIEW extends javax.swing.JFrame {
     private javax.swing.JButton btnVendas;
     private javax.swing.JButton btnVender;
     private javax.swing.JButton btnVoltar;
-    private javax.swing.JTextPane id_produto_venda;
+    private javax.swing.JTextPane idProduto;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
